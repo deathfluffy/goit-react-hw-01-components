@@ -1,4 +1,4 @@
-import css from './Statistics.css';
+import css from './Statistics.module.css';
 import propTypes from 'prop-types';
 
 const createColor = () => {
