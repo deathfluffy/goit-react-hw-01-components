@@ -18,8 +18,12 @@ export const Friends = ({ friends }) => {
     );
 };
 Friends.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
