@@ -14,9 +14,10 @@ const createColor = () => {
 
   return color;
 };
-export const Transactions = ({ items }) => {
-    return (
- <table>
+
+export const TransactionHistory = ({ items }) => {
+  return (
+    <table>
       <thead>
         <tr style={{ backgroundColor: createColor() }}>
           <th>Type</th>
@@ -37,11 +38,16 @@ export const Transactions = ({ items }) => {
         })}
       </tbody>
     </table>
-    )
-}
-Transactions.propTypes = {
-  id: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  amount: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
+  );
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+   id: PropTypes.string.isRequired,
+   type: PropTypes.string.isRequired,
+   amount: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    })
+  ).isRequired
 };
